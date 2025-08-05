@@ -13,13 +13,13 @@ import Quote from './Pages/Quote';
 import Plants from './Pages/Plants';
 import DragDrop from './Pages/DragDrop';
 import Whatsapp from './Components/Whatsapp.jsx';
-import AutoPopup from './Components/AutoPopup.jsx';
+// import AutoPopup from './Components/AutoPopup.jsx';
 
 const App = () => {
   return (
       
     <>
-    <AutoPopup/>
+    {/* <AutoPopup/> */}
     <TopBar/>
      <Router>
       <NavBar/>
