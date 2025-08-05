@@ -1,19 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import logo from "../assets/images/header-logo.png";
+import logo from "../assets/images/header-logo-gfn.png";
 const NavBar = () => {
     const handleDownload = () => {
-        const fileUrl = '../../files/PNP_Availability_List.xlsx';
+        const fileUrl = '../../files/GFN_Availability_List.xlsx';
         const link = document.createElement('a');
         link.href = fileUrl;
-        link.download = 'PNP_Availability_List.xlsx';
+        link.download = 'GFN_Availability_List.xlsx';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     };
     return (
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-2">
-            <Link to="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5"><img src={logo} alt="Peels Native Plants" className="header-logo" /></Link>
+            <Link to="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5"><img src={logo} alt="Green Flow Nurseries" className="header-logo" /></Link>
 
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>

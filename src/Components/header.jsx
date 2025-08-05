@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import "../main.css"; // Ensure you have global styles
-import logo from "../assets/images/header-logo.png"; // Update path if using public folder
+import logo from "../assets/images/header-logo-gfn.png"; // Update path if using public folder
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
         {/* Logo */}
-        
-           <Link to="/" class="nav-item nav-link"><img src={logo} alt="Peels Native Plants" className="header-logo" /></Link>
+
+           <Link to="/" class="nav-item nav-link"><img src={logo} alt="Green Flow Nurseries" className="header-logo" /></Link>
         {/* Navigation Menu */}
         <nav className="nav-menu">
           <ul>

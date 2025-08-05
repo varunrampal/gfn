@@ -12,7 +12,7 @@ const TopBar = () => {
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <span class="far fa-envelope me-2"></span>
-                    <span>info@peelsnativeplants.com</span>
+                    <span>info@greenflownurseries.com</span>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">

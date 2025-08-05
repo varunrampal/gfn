@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 const Footer = () => {  
         const handleDownload = () => {
-        const fileUrl = '../../files/PNP_Availability_List.xlsx';
+        const fileUrl = '../../files/GFN_Availability_List.xlsx';
         const link = document.createElement('a');
         link.href = fileUrl;
-        link.download = 'PNP_Availability_List.xlsx';
+        link.download = 'GFN_Availability_List.xlsx';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
