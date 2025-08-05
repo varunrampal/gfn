@@ -16,9 +16,9 @@ const Footer = () => {
         <div class="row g-5">
             <div class="col-lg-8 col-md-6">
                 <h4 class="text-white mb-4">Our Office</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>22064 64 Ave, Langley, BC, V2Y 2N8</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>35444 Hartley Road, Mission, BC, V2V 0A8</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>604-217-1351</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@peelsnativeplants.com</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@greenflownurseries.com</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -46,8 +46,8 @@ const Footer = () => {
             </div> */}
             <div class="col-lg-12 col-md-6">
                 <h4 class="text-white mb-4">Our Location</h4>
-                <iframe title="Peel Native Plants Location"  src="https://www.google.com/maps?q=22064+64+Ave,+Langley,+BC,+V2Y+2N8&amp;output=embed" width="100%" height="350" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{border:0}}></iframe>
-              
+                <iframe title="Green Flow Nurseries Location"  src="https://www.google.com/maps?q=35444+Hartley+Road,+Mission,+BC,+V2V+0A8&amp;output=embed" width="100%" height="350" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{border:0}}></iframe>
+
             </div>
         </div>
     </div>
