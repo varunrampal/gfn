@@ -35,6 +35,7 @@ const Footer = () => {
                 <Link to="/quote" class="btn btn-link">Get A Quote</Link>
                 <Link to="/sales/information" class="btn btn-link">Sales Information</Link>
                 <Link to="/plants" class="btn btn-link">Plants</Link>
+                <Link to="/gallery" class="btn btn-link">Gallery</Link>
                 <Link to="" class="btn btn-link" onClick={handleDownload}>Availability List</Link>
             </div>
             {/* <div class="col-lg-3 col-md-6">

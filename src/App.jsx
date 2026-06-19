@@ -12,6 +12,7 @@ import SalesInfo from './Pages/SalesInfo';
 import Quote from './Pages/Quote';
 import Plants from './Pages/Plants';
 import DragDrop from './Pages/DragDrop';
+import Gallery from './Pages/Gallery';
 import Whatsapp from './Components/Whatsapp.jsx';
 // import AutoPopup from './Components/AutoPopup.jsx';
 
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/Sales/Information" element={<SalesInfo />} />
             <Route path="/Quote" element={<Quote />} />   
             <Route path="/Plants" element={<Plants />} />  
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/dragdrop" element={<DragDrop/>} />  
                
           </Routes>
