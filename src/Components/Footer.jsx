@@ -20,10 +20,10 @@ const Footer = () => {
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>604-217-1351</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@greenflownurseries.com</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <span class="btn btn-square btn-outline-light rounded-circle me-2" aria-hidden="true"><i class="fab fa-twitter"></i></span>
+                    <span class="btn btn-square btn-outline-light rounded-circle me-2" aria-hidden="true"><i class="fab fa-facebook-f"></i></span>
+                    <span class="btn btn-square btn-outline-light rounded-circle me-2" aria-hidden="true"><i class="fab fa-youtube"></i></span>
+                    <span class="btn btn-square btn-outline-light rounded-circle me-2" aria-hidden="true"><i class="fab fa-linkedin-in"></i></span>
                 </div>
             </div>
            
@@ -36,7 +36,7 @@ const Footer = () => {
                 <Link to="/sales/information" class="btn btn-link">Sales Information</Link>
                 <Link to="/plants" class="btn btn-link">Plants</Link>
                 <Link to="/gallery" class="btn btn-link">Gallery</Link>
-                <Link to="" class="btn btn-link" onClick={handleDownload}>Availability List</Link>
+                <button type="button" class="btn btn-link" onClick={handleDownload}>Availability List</button>
             </div>
             {/* <div class="col-lg-3 col-md-6">
             <h4 class="text-white mb-4">Our Location</h4>

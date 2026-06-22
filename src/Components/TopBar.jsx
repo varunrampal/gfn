@@ -18,10 +18,10 @@ const TopBar = () => {
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center mx-n2">
                     <span>Follow Us:</span>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                    <span class="btn btn-link text-light" aria-hidden="true"><i class="fab fa-facebook-f"></i></span>
+                    <span class="btn btn-link text-light" aria-hidden="true"><i class="fab fa-twitter"></i></span>
+                    <span class="btn btn-link text-light" aria-hidden="true"><i class="fab fa-linkedin-in"></i></span>
+                    <span class="btn btn-link text-light" aria-hidden="true"><i class="fab fa-instagram"></i></span>
                 </div>
             </div>
         </div>

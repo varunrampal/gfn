@@ -98,8 +98,13 @@ h6,
 }
 
 .navbar .navbar-brand,
-.navbar a.btn {
+.navbar .btn {
     height: 80px
+}
+
+.navbar .nav-dropdown-button {
+    background: transparent;
+    border: 0;
 }
 
 .navbar .navbar-nav .nav-link {

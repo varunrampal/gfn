@@ -521,13 +521,19 @@ body {
 }
 
 .plant-name-link {
+  background: none;
+  border: 0;
   color: #4a7c59;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
   font-weight: 600;
   font-size: 1.12rem;
-  padding-bottom: 2px;
+  padding: 0 0 2px;
+  text-align: left;
 }
 
 .plant-name-link::after {

@@ -21,7 +21,7 @@ const Carousel = () => {
             <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="w-100" src={image1} alt="Crousel Image1" />
+                        <img class="w-100" src={image1} alt="Wholesale BC native plants at Green Flow Nurseries" />
                         <div class="carousel-caption">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -29,7 +29,7 @@ const Carousel = () => {
                                         {/* <h1 class="display-1 text-white mb-5 animated slideInDown">Wholesale BC Native Plants</h1> */}
                                         <h1 class="text-white mb-5 animated slideInDown">Wholesale BC Native Plants</h1>
                                         <Link to="/quote" class="btn btn-primary py-sm-3 px-sm-4">Get A Quote<i class="fa fa-arrow-right ms-3"></i></Link>
-                                        <Link to="" class="btn btn-primary py-sm-3 px-sm-4" style={{ marginLeft: '5px' }} onClick={handleDownload}>Availability List<i class="fa fa-download ms-3"></i></Link>
+                                        <button type="button" class="btn btn-primary py-sm-3 px-sm-4" style={{ marginLeft: '5px' }} onClick={handleDownload}>Availability List<i class="fa fa-download ms-3"></i></button>
 
                                     </div>
                                 </div>
@@ -37,7 +37,7 @@ const Carousel = () => {
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="w-100" src={image2} alt="Crousel Image2" />
+                        <img class="w-100" src={image2} alt="Quality native plant stock at Green Flow Nurseries" />
                         <div class="carousel-caption">
                             <div class="container">
                                 <div class="row justify-content-center">

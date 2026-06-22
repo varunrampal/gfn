@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dragdrop
+
+Sitemap: https://greenflownurseries.com/sitemap.xml

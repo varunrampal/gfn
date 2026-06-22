@@ -30,9 +30,9 @@ const NavBar = () => {
                       {/* <Link to="/dragdrop" class="nav-item nav-link">DragDrop</Link> */}
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sales</a>
+                        <button type="button" class="nav-link dropdown-toggle nav-dropdown-button" data-bs-toggle="dropdown">Sales</button>
                         <div class="dropdown-menu bg-light m-0">
-                            <Link to="sales/information" class="dropdown-item">Information</Link>
+                            <Link to="/sales/information" class="dropdown-item">Information</Link>
 
                         </div>
                     </div>
@@ -40,7 +40,7 @@ const NavBar = () => {
                     {/* <Link to="" class="nav-item nav-link" onClick={handleDownload}>Availability</Link> */}
                     <Link to="/contact" class="nav-item nav-link">Contact</Link>
                 </div>
-                <Link to="" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block" style={{ marginRight: '2px' }} onClick={handleDownload}>Availability<i class="fa fa-download ms-3"></i></Link>
+                <button type="button" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block" style={{ marginRight: '2px' }} onClick={handleDownload}>Availability<i class="fa fa-download ms-3"></i></button>
                 <Link to="/quote" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote <i class="fa fa-arrow-right ms-3"></i></Link>
 
             </div>

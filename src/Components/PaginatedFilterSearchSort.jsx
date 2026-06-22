@@ -42,8 +42,8 @@ const PaginatedFilterSearchSort = ({items}) => {
 
     // Sort data
     filtered.sort((a, b) => {
-      if (sortOption === 'name-asc') return a.Name.localeCompare(b.name);
-      if (sortOption === 'name-desc') return b.Name.localeCompare(a.name);
+      if (sortOption === 'name-asc') return a.Name.localeCompare(b.Name);
+      if (sortOption === 'name-desc') return b.Name.localeCompare(a.Name);
       return 0;
     });
 
@@ -95,8 +95,8 @@ const PaginatedFilterSearchSort = ({items}) => {
             value={sortOption}
             onChange={e => setSortOption(e.target.value)}
           >
-            <option value="name-asc">Sort: Name A–Z </option>
-            <option value="name-desc">Sort: Name Z–A</option>
+            <option value="name-asc">Sort: Name A-Z</option>
+            <option value="name-desc">Sort: Name Z-A</option>
         
           </select>
         </div>
@@ -108,12 +108,12 @@ const PaginatedFilterSearchSort = ({items}) => {
               <div className="plant-card">
 
                 <ZoomImage
-                  src={plant.Imgpath} alt={plant.Name}
+                  src={plant.Imgpath} alt={`${plant.Name} - ${plant.CommanName || plant.Type}`}
                 />
 
-                <a href="#" class="plant-name-link" onClick={(e) => { e.preventDefault(); openModal(index); }}>
+                <button type="button" class="plant-name-link" onClick={() => openModal(index)}>
                   {plant.Name}
-                </a>
+                </button>
                 <p class="plant-commanname">{plant.CommanName}</p>
                 <p class="plant-category">{plant.Type}</p>
                 <Modal isOpen={activeItemId === index} onClose={closeModal}>
