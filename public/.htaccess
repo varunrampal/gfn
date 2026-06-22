@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  RewriteCond %{HTTP_HOST} ^www\.greenflownurseries\.com$ [NC]
+  RewriteRule ^ https://greenflownurseries.com%{REQUEST_URI} [L,R=301,NE]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
