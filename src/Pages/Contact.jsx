@@ -1,20 +1,19 @@
-import React, { useRef,useState } from 'react';
-import emailjs from '@emailjs/browser';
-import ReactJsAlert from "reactjs-alert";
-import ContactUs from '../Components/ContactUs'
+import React from 'react';
+import ContactUs from '../Components/ContactUs';
 
-const Contact = () => {
-  return (
-    <>
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center py-5">
-            <h1 class="display-3 text-white mb-4 animated slideInDown">Contact Us</h1>
-        </div>
-    </div>
-<ContactUs/>
-  
-   </>
-  )
-}
+const Contact = () => (
+  <>
+    <header className="container-fluid page-header contact-page-header py-5 mb-0 wow fadeIn" data-wow-delay="0.1s">
+      <div className="container text-center py-5">
+        <p className="contact-page-header__eyebrow">Connect With GFN</p>
+        <h1 className="display-3 text-white mb-3 animated slideInDown">Contact Our Team</h1>
+        <p className="contact-page-header__lead mx-auto mb-0">
+          Tell us about your plant requirements, project schedule, or availability needs.
+        </p>
+      </div>
+    </header>
+    <ContactUs />
+  </>
+);
 
-export default Contact
+export default Contact;

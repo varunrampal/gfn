@@ -1,51 +1,52 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import logo from "../assets/images/header-logo-gfn.png";
-const NavBar = () => {
-    const handleDownload = () => {
-        const fileUrl = '../../files/GFN_Availability_List.xlsx';
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        link.download = 'GFN_Availability_List.xlsx';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-    return (
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-2">
-            <Link to="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5"><img src={logo} alt="Green Flow Nurseries" className="header-logo" /></Link>
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/images/header-logo-gfn.png';
 
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <Link to="/" class="nav-item nav-link">Home</Link>
+const navItems = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/about', label: 'About' },
+  { to: '/plants', label: 'Plants' },
+  { to: '/sales/information', label: 'Sales Information' },
+  { to: '/gallery', label: 'Gallery' },
+  { to: '/contact', label: 'Contact' },
+];
 
-                    <Link to={"/about"} state={{ hiddenParam: 'nobtn' }} class="nav-item nav-link">About</Link>
+const NavBar = () => (
+  <nav className="navbar navbar-expand-lg navbar-light sticky-top gfn-navbar" aria-label="Primary navigation">
+    <div className="container-fluid gfn-navbar__inner">
+      <Link to="/" className="navbar-brand gfn-navbar__brand" aria-label="GFN home">
+        <img src={logo} alt="GFN — Green Flow Nurseries" className="header-logo" />
+      </Link>
 
-                    <Link to="/plants" class="nav-item nav-link">Plants</Link>
-                    <Link to="/gallery" class="nav-item nav-link">Gallery</Link>
-                     {/* <Link to="/plantstest" class="nav-item nav-link">PlantsTest</Link> */}
-                      {/* <Link to="/dragdrop" class="nav-item nav-link">DragDrop</Link> */}
+      <button
+        type="button"
+        className="navbar-toggler gfn-navbar__toggle"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon" />
+      </button>
 
-                    <div class="nav-item dropdown">
-                        <button type="button" class="nav-link dropdown-toggle nav-dropdown-button" data-bs-toggle="dropdown">Sales</button>
-                        <div class="dropdown-menu bg-light m-0">
-                            <Link to="/sales/information" class="dropdown-item">Information</Link>
+      <div className="collapse navbar-collapse gfn-navbar__collapse" id="navbarCollapse">
+        <div className="navbar-nav ms-auto gfn-navbar__links">
+          {navItems.map((item) => (
+            <NavLink
+              to={item.to}
+              end={item.end}
+              className={({ isActive }) => `nav-item nav-link${isActive ? ' active' : ''}`}
+              state={item.to === '/about' ? { hiddenParam: 'nobtn' } : undefined}
+              key={item.to}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </div>
+      </div>
+    </div>
+  </nav>
+);
 
-                        </div>
-                    </div>
-
-                    {/* <Link to="" class="nav-item nav-link" onClick={handleDownload}>Availability</Link> */}
-                    <Link to="/contact" class="nav-item nav-link">Contact</Link>
-                </div>
-                <button type="button" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block" style={{ marginRight: '2px' }} onClick={handleDownload}>Availability<i class="fa fa-download ms-3"></i></button>
-                <Link to="/quote" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote <i class="fa fa-arrow-right ms-3"></i></Link>
-
-            </div>
-        </nav>
-    )
-}
-
-export default NavBar
+export default NavBar;

@@ -1,54 +1,73 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Mission = () => {
-  return (
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    {/* <p class="fs-5 fw-bold text-primary">Why Choosing Us!</p> */}
-                    <h1 class="display-5 mb-4">Our Mission & Commitment</h1>
-                    <p class="mb-4">We are committed to satisfy each customer. We are not stopping until you are fully satisfied.</p>
-                    <p>Our mission is to produce good quality plants at reasonable price. And we are committed to take the Nursery line of business to next level where Landscapers, Developers, Retail customers, and Garden centers can purchase any plants through us via online, phone or e-mail without visiting our Nursery. Once order is placed our team works very dedicatedly to complete the order and deliver.</p>
-                    <Link to="/contact" class="btn btn-primary py-3 px-4">Contact Now</Link>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-md-6">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                                    <div class="text-center rounded py-5 px-4" style={{boxShadow:'0 0 45px rgba(0,0,0,.08)'}}>
-                                        <div class="btn-square bg-light rounded-circle mx-auto mb-4" style={{width:'90px',height:'90px'}}>
-                                            <i class="fa fa-check fa-3x text-primary"></i>
-                                        </div>
-                                        <h4 class="mb-0">100% Satisfaction</h4>
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                                    <div class="text-center rounded py-5 px-4" style={{boxShadow:'0 0 45px rgba(0,0,0,.08)'}}>
-                                        <div class="btn-square bg-light rounded-circle mx-auto mb-4" style={{width:'90px',height:'90px'}}>
-                                            <i class="fa fa-users fa-3x text-primary"></i>
-                                        </div>
-                                        <h4 class="mb-0">Dedicated Team</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
-                            <div class="text-center rounded py-5 px-4" style={{boxShadow:'0 0 45px rgba(0,0,0,.08)'}}>
-                                <div class="btn-square bg-light rounded-circle mx-auto mb-4" style={{width:'90px',height:'90px'}}>
-                                    <i class="fa fa-user fa-3x text-primary"></i>
-                                </div>
-                                <h4 class="mb-0">Years Of Experience </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  )
-}
+const missionPoints = [
+  {
+    icon: 'fa-boxes',
+    title: 'Dependable Supply',
+    text: 'Clear availability and responsive order support for wholesale customers.',
+  },
+  {
+    icon: 'fa-project-diagram',
+    title: 'Project Focus',
+    text: 'Plant material suited to commercial landscape and environmental applications.',
+  },
+  {
+    icon: 'fa-seedling',
+    title: 'Growing Expertise',
+    text: 'Focused knowledge in the propagation and cultivation of BC native plants.',
+  },
+];
 
-export default Mission
+const Mission = () => (
+  <section className="container-xxl py-5" aria-labelledby="mission-title">
+    <div className="container">
+      <div className="row g-5 align-items-center">
+        <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+          <p className="fs-5 fw-bold text-primary mb-2">Our Mission</p>
+          <h2 className="display-5 mb-4" id="mission-title">
+            Helping projects succeed from the ground up
+          </h2>
+          <p className="mb-3">
+            GFN’s mission is to produce dependable plant material and make commercial
+            nursery purchasing straightforward. We combine focused horticultural knowledge
+            with practical service so customers can plan, source, and receive the plants
+            their projects require.
+          </p>
+          <p className="mb-4">
+            We are committed to consistent communication, responsible growing practices,
+            and careful order fulfilment. Whether an order supports a landscape installation,
+            habitat restoration, wetland, stream, highway, or park project, our team works
+            to understand the requirements and provide suitable material from available stock.
+          </p>
+          <Link to="/contact" className="btn btn-primary py-3 px-4">
+            Discuss Your Project
+          </Link>
+        </div>
+
+        <div className="col-lg-6">
+          <div className="row g-4">
+            {missionPoints.map((point, index) => (
+              <div className="col-md-4 col-lg-12 wow fadeIn" data-wow-delay={`${0.3 + index * 0.2}s`} key={point.title}>
+                <article className="d-flex align-items-center rounded p-4 h-100 mission-point">
+                  <div
+                    className="btn-square bg-light rounded-circle flex-shrink-0 me-4"
+                    style={{ width: '72px', height: '72px' }}
+                  >
+                    <i className={`fa ${point.icon} fa-2x text-primary`} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="h4 mb-2">{point.title}</h3>
+                    <p className="mb-0 fs-6">{point.text}</p>
+                  </div>
+                </article>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default Mission;

@@ -1,33 +1,42 @@
-import React from 'react'
+import React from 'react';
 
-const TopBar = () => {
-  return (
-   
-    <div class="container-fluid bg-dark text-light px-0 py-2">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <span class="fa fa-phone-alt me-2"></span>
-                    <span>604-217-1351</span>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <span class="far fa-envelope me-2"></span>
-                    <span>info@greenflownurseries.com</span>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <span>Follow Us:</span>
-                    <span class="btn btn-link text-light" aria-hidden="true"><i class="fab fa-facebook-f"></i></span>
-                    <span class="btn btn-link text-light" aria-hidden="true"><i class="fab fa-twitter"></i></span>
-                    <span class="btn btn-link text-light" aria-hidden="true"><i class="fab fa-linkedin-in"></i></span>
-                    <span class="btn btn-link text-light" aria-hidden="true"><i class="fab fa-instagram"></i></span>
-                </div>
-            </div>
-        </div>
-    
+const TopBar = () => (
+  <aside className="gfn-topbar" aria-label="GFN contact and ordering information">
+    <div className="container-fluid gfn-topbar__inner">
+      <div className="gfn-topbar__identity">
+        <span className="gfn-topbar__mark" aria-hidden="true" />
+        <span>Commercial Nursery</span>
+        <span className="gfn-topbar__divider" aria-hidden="true" />
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=35444+Hartley+Road+Mission+BC+V2V+0A8"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Mission, BC
+        </a>
+      </div>
+
+      <div className="gfn-topbar__contact">
+        <a href="tel:+18334989898" aria-label="Call GFN toll-free at 1-833-498-9898">
+          <i className="fa fa-phone-alt" aria-hidden="true" />
+          <span>Toll-Free: 1-833-498-9898</span>
+        </a>
+        <a className="gfn-topbar__email" href="mailto:info@greenflownurseries.com">
+          <i className="fa fa-envelope" aria-hidden="true" />
+          <span>info@greenflownurseries.com</span>
+        </a>
+      </div>
+
+      <div className="gfn-topbar__actions">
+        <a href="/files/GFN_Availability_List.xlsx" download>
+          Availability List <i className="fa fa-download" aria-hidden="true" />
+        </a>
+        <a className="gfn-topbar__quote" href="/quote">
+          Request a Quote <i className="fa fa-arrow-right" aria-hidden="true" />
+        </a>
+      </div>
     </div>
-  )
-}
+  </aside>
+);
 
-export default TopBar
+export default TopBar;

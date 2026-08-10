@@ -1,53 +1,47 @@
-import React from 'react'
+import React from 'react';
 
-const TopFeatures = () => {
-  return (
-    <div class="container-fluid top-feature py-5 pt-lg-0">
-    <div class="container py-5 pt-lg-0">
-        <div class="row gx-0">
-            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                <div class="bg-white shadow d-flex align-items-center h-100 px-5" style={{minHeight: '160px'}}>
-                    <div class="d-flex">
-                        <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                            <i class="fa fa-times text-primary"></i>
-                        </div>
-                        <div class="ps-3">
-                            <h4>Best Quality Plants</h4>
-                            <span>We grow best quality plants</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                <div class="bg-white shadow d-flex align-items-center h-100 px-5" style={{minHeight: '160px'}}>
-                    <div class="d-flex">
-                        <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                            <i class="fa fa-users text-primary"></i>
-                        </div>
-                        <div class="ps-3">
-                            <h4>Dedicated Team</h4>
-                            <span>We have dedicated team </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                <div class="bg-white shadow d-flex align-items-center h-100 px-5" style={{minHeight: '160px'}}>
-                    <div class="d-flex">
-                        <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                            <i class="fa fa-phone text-primary"></i>
-                        </div>
-                        <div class="ps-3">
-                            <h4>24/7 Available</h4>
-                            <span>Always available to help</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+const capabilities = [
+  {
+    icon: 'fa-industry',
+    title: 'Production Capability',
+    description: 'Organized growing capacity for dependable commercial plant supply.',
+  },
+  {
+    icon: 'fa-seedling',
+    title: 'Native Plant Expertise',
+    description: 'Plant material for landscape, restoration, and environmental applications.',
+  },
+  {
+    icon: 'fa-truck',
+    title: 'Project-Ready Supply',
+    description: 'Responsive availability and order support for demanding project schedules.',
+  },
+];
+
+const TopFeatures = () => (
+  <section className="gfn-capabilities" aria-label="GFN capabilities">
+    <div className="container">
+      <div className="row g-0 gfn-capabilities__grid">
+        {capabilities.map((capability, index) => (
+          <div
+            className="col-lg-4 wow fadeIn"
+            data-wow-delay={`${0.1 + index * 0.2}s`}
+            key={capability.title}
+          >
+            <article className="gfn-capability">
+              <span className="gfn-capability__icon" aria-hidden="true">
+                <i className={`fa ${capability.icon}`} />
+              </span>
+              <div>
+                <h2>{capability.title}</h2>
+                <p>{capability.description}</p>
+              </div>
+            </article>
+          </div>
+        ))}
+      </div>
     </div>
-</div>
-  )
-}
+  </section>
+);
 
-export default TopFeatures
+export default TopFeatures;

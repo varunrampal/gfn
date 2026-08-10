@@ -1,69 +1,49 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import image1 from "../assets/images/carousel-1.jpg";
-import image2 from "../assets/images/carousel-2.jpg";
-
-
+import heroImage from '../assets/images/carousel-2.jpg';
 
 const Carousel = () => {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/files/GFN_Availability_List.xlsx';
+    link.download = 'GFN_Availability_List.xlsx';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-    const handleDownload = () => {
-        const fileUrl = '../../files/GFN_Availability_List.xlsx';
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        link.download = 'GFN_Availability_List.xlsx';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-    return (
-        <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
-            <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="w-100" src={image1} alt="Wholesale BC native plants at Green Flow Nurseries" />
-                        <div class="carousel-caption">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-8">
-                                        {/* <h1 class="display-1 text-white mb-5 animated slideInDown">Wholesale BC Native Plants</h1> */}
-                                        <h1 class="text-white mb-5 animated slideInDown">Wholesale BC Native Plants</h1>
-                                        <Link to="/quote" class="btn btn-primary py-sm-3 px-sm-4">Get A Quote<i class="fa fa-arrow-right ms-3"></i></Link>
-                                        <button type="button" class="btn btn-primary py-sm-3 px-sm-4" style={{ marginLeft: '5px' }} onClick={handleDownload}>Availability List<i class="fa fa-download ms-3"></i></button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="w-100" src={image2} alt="Quality native plant stock at Green Flow Nurseries" />
-                        <div class="carousel-caption">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-7">
-                                        {/* <h1 class="display-1 text-white mb-5 animated slideInDown">Best Quality Plants</h1> */}
-                                        <h1 class="text-white mb-5 animated slideInDown">Best Quality Plants</h1>
-                                        <Link to="/plants" class="btn btn-primary py-sm-3 px-sm-4">Our Plants</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+  return (
+    <section className="gfn-hero" aria-labelledby="gfn-hero-title">
+      <img
+        className="gfn-hero__image"
+        src={heroImage}
+        alt="Commercial greenhouse plant production at GFN"
+      />
+      <div className="gfn-hero__overlay" />
+      <div className="container gfn-hero__content">
+        <div className="gfn-hero__copy wow fadeInUp" data-wow-delay="0.1s">
+          <p className="gfn-hero__eyebrow">GFN · Green Flow Nurseries</p>
+          <h1 id="gfn-hero-title">Commercial Plant Production at Scale</h1>
+          <p className="gfn-hero__lead">
+            Dependable plant material for landscape, restoration, infrastructure,
+            and environmental projects across British Columbia.
+          </p>
+          <div className="gfn-hero__actions">
+            <Link to="/quote" className="btn btn-primary gfn-hero__button">
+              Request a Quote <i className="fa fa-arrow-right ms-2" aria-hidden="true" />
+            </Link>
+            <button
+              type="button"
+              className="btn gfn-hero__button gfn-hero__button--secondary"
+              onClick={handleDownload}
+            >
+              View Current Availability <i className="fa fa-download ms-2" aria-hidden="true" />
+            </button>
+          </div>
         </div>
-    )
-}
+      </div>
+    </section>
+  );
+};
 
-export default Carousel
+export default Carousel;
