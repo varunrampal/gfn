@@ -32,7 +32,9 @@ const TopBar = () => (
           Availability List <i className="fa fa-download" aria-hidden="true" />
         </a>
         <a className="gfn-topbar__quote" href="/quote">
-          Request a Quote <i className="fa fa-arrow-right" aria-hidden="true" />
+          <span className="gfn-topbar__quote-full">Request a Quote</span>
+          <span className="gfn-topbar__quote-short">Quote</span>
+          <i className="fa fa-arrow-right" aria-hidden="true" />
         </a>
       </div>
     </div>

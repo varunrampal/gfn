@@ -114,7 +114,7 @@
 
 @media (max-width: 767.98px) {
   .gfn-topbar__inner {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(42px, 1fr) auto;
     padding-left: 18px;
   }
 
@@ -127,15 +127,38 @@
     padding-right: 18px;
     padding-left: 18px;
   }
-}
 
-@media (max-width: 390px) {
   .gfn-topbar__contact span {
     display: none;
   }
 
+  .gfn-topbar__contact {
+    min-width: 0;
+    gap: 0;
+  }
+
+  .gfn-topbar__contact a {
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+  }
+
   .gfn-topbar__contact i {
     font-size: .9rem;
+  }
+}
+
+.gfn-topbar__quote-short {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .gfn-topbar__quote-full {
+    display: none;
+  }
+
+  .gfn-topbar__quote-short {
+    display: inline;
   }
 }
 
