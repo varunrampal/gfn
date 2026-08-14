@@ -1,0 +1,38 @@
+.quote-request {
+  width: min(900px, calc(100% - 2rem));
+  margin: 0 auto 5rem;
+  color: #24352b;
+}
+
+.quote-request__intro { margin-bottom: 1.5rem; text-align: center; }
+.quote-request__intro h2 { margin-bottom: .65rem; color: #0f4229; }
+.quote-request__intro p:last-child { max-width: 650px; margin: 0 auto; color: #59665e; }
+.quote-request__eyebrow { margin-bottom: .35rem; color: #348e38; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .82rem; }
+.quote-request__form { padding: clamp(1.25rem, 4vw, 2.5rem); border: 1px solid #dce9df; border-radius: 14px; background: #f2faf3; box-shadow: 0 16px 45px rgba(15, 66, 41, .08); }
+.quote-request fieldset { margin: 0 0 1.75rem; padding: 0 0 1.75rem; border: 0; border-bottom: 1px solid #d8e6db; }
+.quote-request fieldset:last-of-type { margin-bottom: 1.25rem; }
+.quote-request legend { float: none; width: auto; margin-bottom: 1rem; color: #0f4229; font-size: 1.1rem; font-weight: 700; }
+.quote-request__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.quote-request label { display: grid; gap: .45rem; color: #203c2b; font-weight: 600; }
+.quote-request input, .quote-request select, .quote-request textarea { width: 100%; padding: .8rem .9rem; color: #24352b; background: #fff; border: 1px solid #c9d8cd; border-radius: 7px; font: inherit; }
+.quote-request input:focus, .quote-request select:focus, .quote-request textarea:focus { outline: 3px solid rgba(52, 142, 56, .18); border-color: #348e38; }
+.quote-request textarea { resize: vertical; }
+.quote-request__optional { margin-left: .25rem; color: #68756c; font-size: .8rem; font-weight: 400; }
+.quote-request__full-label { margin-top: 1rem; }
+.quote-request__upload { margin-top: 1rem; padding: 1.1rem; border: 2px dashed #a8c4ae; border-radius: 9px; background: #fff; }
+.quote-request__upload p { margin: .25rem 0 .75rem; color: #66736a; font-size: .88rem; }
+.quote-request__upload input { padding: .55rem; }
+.quote-request__file { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .8rem; padding: .65rem .75rem; border-radius: 6px; background: #e8f5e9; }
+.quote-request__file button { padding: .25rem .5rem; color: #8a2424; border: 0; background: transparent; font-weight: 700; }
+.quote-request__status { margin-bottom: 1rem; padding: .85rem 1rem; border-radius: 7px; }
+.quote-request__status--success { color: #155c2b; background: #dff3e4; }
+.quote-request__status--error { color: #842029; background: #f8d7da; }
+.quote-request__status--submitting { color: #31583a; background: #e5f1e7; }
+.quote-request__submit { display: block; min-width: 190px; margin: 0 auto; }
+.quote-request__submit:disabled { cursor: wait; opacity: .7; }
+.quote-request__honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+
+@media (max-width: 650px) {
+  .quote-request__grid { grid-template-columns: 1fr; }
+  .quote-request__file { align-items: flex-start; flex-direction: column; }
+}
