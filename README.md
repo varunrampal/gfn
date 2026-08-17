@@ -28,8 +28,16 @@ The conservative limit keeps the attachment in Microsoft Graph's direct
 ### Resend alternative
 
 `src/Components/ResendQuoteForm.jsx` is a separate Resend-backed version of the
-same quote UI. It posts to `api/quote-resend.js`, which calls Resend only from
-the server and supports the same plant-list attachment.
+same quote UI. In production it posts to `public/api/quote-resend.php`, which is
+compatible with the site's Hostinger/LiteSpeed PHP hosting. Local Vite
+development maps the same URL to `api/quote-resend.js`. Both handlers call
+Resend only from the server and support the same plant-list attachment.
+
+For Hostinger, copy `quote-config.example.php` to `quote-config.php`, add the
+real Resend key, and upload it one directory above `public_html`. Upload the
+contents of `dist` into `public_html`; the build includes
+`dist/api/quote-resend.php`. Do not upload the real configuration into
+`public_html` or commit it to Git.
 
 To use it, replace `MicrosoftGraphQuoteForm` with `ResendQuoteForm` on the quote
 page and configure `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `RESEND_FROM_NAME`, and
