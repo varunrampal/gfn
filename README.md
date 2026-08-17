@@ -33,6 +33,10 @@ compatible with the site's Hostinger/LiteSpeed PHP hosting. Local Vite
 development maps the same URL to `api/quote-resend.js`. Both handlers call
 Resend only from the server and support the same plant-list attachment.
 
+The `/api/quote-resend.php` browser route is fixed in the component so a stale
+build-time environment variable cannot redirect production submissions to the
+SPA fallback.
+
 For Hostinger, copy `quote-config.example.php` to `quote-config.php`, add the
 real Resend key, and upload it one directory above `public_html`. Upload the
 contents of `dist` into `public_html`; the build includes
