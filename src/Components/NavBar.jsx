@@ -16,6 +16,7 @@ const NavBar = () => (
     <div className="container-fluid gfn-navbar__inner">
       <Link to="/" className="navbar-brand gfn-navbar__brand" aria-label="GFN home">
         <img src={logo} alt="GFN — Green Flow Nurseries" className="header-logo" />
+        <span className="header-logo__text">Green Flow</span>
       </Link>
 
       <button
