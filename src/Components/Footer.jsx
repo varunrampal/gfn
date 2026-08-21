@@ -66,10 +66,6 @@ const Footer = () => {
                   <i className="fa fa-phone-alt" aria-hidden="true" />
                   <span><small>Toll-Free</small>1-833-498-9898</span>
                 </a>
-                <a href="tel:+16042171351">
-                  <i className="fa fa-phone-alt" aria-hidden="true" />
-                  <span><small>Local</small>604-217-1351</span>
-                </a>
                 <a href="mailto:info@greenflownurseries.com">
                   <i className="fa fa-envelope" aria-hidden="true" />
                   <span>info@greenflownurseries.com</span>
