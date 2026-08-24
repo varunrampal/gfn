@@ -17,6 +17,16 @@
 .quote-request input, .quote-request select, .quote-request textarea { width: 100%; padding: .8rem .9rem; color: #24352b; background: #fff; border: 1px solid #c9d8cd; border-radius: 7px; font: inherit; }
 .quote-request input:focus, .quote-request select:focus, .quote-request textarea:focus { outline: 3px solid rgba(52, 142, 56, .18); border-color: #348e38; }
 .quote-request textarea { resize: vertical; }
+.quote-request__plant-help { margin: 0 0 1rem; color: #66736a; }
+.quote-request__plant-head, .quote-request__plant-row { display: grid; grid-template-columns: minmax(180px, 2fr) minmax(90px, .65fr) minmax(150px, 1.2fr) 36px; gap: .65rem; }
+.quote-request__plant-head { padding: 0 .15rem .45rem; color: #203c2b; font-size: .76rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.quote-request__plant-rows { display: grid; gap: .65rem; }
+.quote-request__plant-row { align-items: center; }
+.quote-request__plant-row label { display: block; font-size: 0; }
+.quote-request__plant-row input { font-size: 1rem; }
+.quote-request__row-number { display: none; }
+.quote-request__remove-plant { width: 36px; height: 36px; padding: 0; border: 0; background: transparent; color: #8a2424; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.quote-request__add-plant { margin-top: 1rem; padding: .45rem 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: #348e38; font-weight: 700; cursor: pointer; }
 .quote-request__optional { margin-left: .25rem; color: #68756c; font-size: .8rem; font-weight: 400; }
 .quote-request__full-label { margin-top: 1rem; }
 .quote-request__upload { margin-top: 1rem; padding: 1.1rem; border: 2px dashed #a8c4ae; border-radius: 9px; background: #fff; }
@@ -35,4 +45,9 @@
 @media (max-width: 650px) {
   .quote-request__grid { grid-template-columns: 1fr; }
   .quote-request__file { align-items: flex-start; flex-direction: column; }
+  .quote-request__plant-head { display: none; }
+  .quote-request__plant-row { padding: 1rem; border: 1px solid #d8e6db; border-radius: 7px; grid-template-columns: minmax(0, 1fr) 36px; }
+  .quote-request__plant-row label { grid-column: 1 / -1; display: grid; font-size: inherit; }
+  .quote-request__row-number { display: inline; color: #68756c; }
+  .quote-request__remove-plant { grid-column: 2; justify-self: end; }
 }

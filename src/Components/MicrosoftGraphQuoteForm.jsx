@@ -3,6 +3,11 @@ import './MicrosoftGraphQuoteForm.css'
 
 const MAX_ATTACHMENT_BYTES = 2.5 * 1024 * 1024
 const ACCEPTED_FILE_TYPES = '.xlsx,.xls,.csv,.pdf,.doc,.docx,.jpg,.jpeg,.png'
+const EMPTY_PLANT_ROWS = [
+  { id: 1, plant: '', quantity: '', size: '' },
+  { id: 2, plant: '', quantity: '', size: '' },
+  { id: 3, plant: '', quantity: '', size: '' },
+]
 
 const initialStatus = { type: 'idle', message: '' }
 
@@ -20,6 +25,8 @@ const MicrosoftGraphQuoteForm = ({
   const formRef = useRef(null)
   const [attachment, setAttachment] = useState(null)
   const [status, setStatus] = useState(initialStatus)
+  const [plantRows, setPlantRows] = useState(EMPTY_PLANT_ROWS)
+  const nextPlantId = useRef(4)
 
   const selectAttachment = (event) => {
     const file = event.target.files?.[0]
@@ -46,11 +53,28 @@ const MicrosoftGraphQuoteForm = ({
     if (input) input.value = ''
   }
 
+  const updatePlantRow = (id, field, value) => {
+    setPlantRows((rows) => rows.map((row) => row.id === id ? { ...row, [field]: value } : row))
+  }
+
+  const addPlantRow = () => {
+    setPlantRows((rows) => [...rows, { id: nextPlantId.current++, plant: '', quantity: '', size: '' }])
+  }
+
+  const removePlantRow = (id) => {
+    setPlantRows((rows) => rows.length === 1 ? EMPTY_PLANT_ROWS.slice(0, 1) : rows.filter((row) => row.id !== id))
+  }
+
   const submitQuote = async (event) => {
     event.preventDefault()
     const form = event.currentTarget
     const data = new FormData(form)
-    const plantList = String(data.get('plantList') || '').trim()
+    const plantItems = plantRows
+      .filter((row) => row.plant.trim() || row.quantity.trim() || row.size.trim())
+      .map((row) => ({ plant: row.plant.trim(), quantity: row.quantity.trim(), size: row.size.trim() }))
+    const plantList = plantItems
+      .map((item, index) => `${index + 1}. ${item.plant || 'Plant not specified'} | Quantity: ${item.quantity || 'Not specified'} | Size: ${item.size || 'Not specified'}`)
+      .join('\n')
 
     if (!plantList && !attachment) {
       setStatus({ type: 'error', message: 'Enter your plant requirements or attach a plant list.' })
@@ -79,7 +103,8 @@ const MicrosoftGraphQuoteForm = ({
           location: data.get('location'),
           requiredBy: data.get('requiredBy'),
           plantList,
-          additionalNotes: data.get('additionalNotes'),
+          plantItems,
+          projectNotes: data.get('projectNotes'),
           website: data.get('website'),
           attachment: encodedAttachment,
         }),
@@ -90,6 +115,8 @@ const MicrosoftGraphQuoteForm = ({
 
       form.reset()
       setAttachment(null)
+      setPlantRows(EMPTY_PLANT_ROWS)
+      nextPlantId.current = 4
       setStatus({
         type: 'success',
         message: successMessage,
@@ -131,8 +158,19 @@ const MicrosoftGraphQuoteForm = ({
 
         <fieldset>
           <legend>Plant requirements</legend>
-          <label className="quote-request__full-label" htmlFor="plant-list">Plant list <span className="quote-request__optional">Enter a list or attach a file</span></label>
-          <textarea id="plant-list" name="plantList" rows="6" placeholder="Example: 20 × Red Maple, 10-gallon; 30 × Blue Spruce plugs" />
+          <p className="quote-request__plant-help">Add one plant per row. Approximate quantities and sizes are welcome.</p>
+          <div className="quote-request__plant-head" aria-hidden="true"><span>Plant or species</span><span>Quantity</span><span>Size</span><span></span></div>
+          <div className="quote-request__plant-rows">
+            {plantRows.map((row, index) => (
+              <div className="quote-request__plant-row" key={row.id}>
+                <label>Plant or species <span className="quote-request__row-number">{index + 1}</span><input type="text" value={row.plant} onChange={(event) => updatePlantRow(row.id, 'plant', event.target.value)} placeholder="e.g. Red Maple" /></label>
+                <label>Quantity<input type="text" inputMode="numeric" value={row.quantity} onChange={(event) => updatePlantRow(row.id, 'quantity', event.target.value)} placeholder="e.g. 20" /></label>
+                <label>Size<input type="text" value={row.size} onChange={(event) => updatePlantRow(row.id, 'size', event.target.value)} placeholder="e.g. 10-gallon" /></label>
+                <button className="quote-request__remove-plant" type="button" onClick={() => removePlantRow(row.id)} aria-label={`Remove plant row ${index + 1}`}>×</button>
+              </div>
+            ))}
+          </div>
+          <button className="quote-request__add-plant" type="button" onClick={addPlantRow}>+ Add another plant</button>
 
           <div className="quote-request__upload">
             <label htmlFor="plant-list-file">Attach your plant list</label>
@@ -146,8 +184,8 @@ const MicrosoftGraphQuoteForm = ({
             )}
           </div>
 
-          <label className="quote-request__full-label" htmlFor="additional-notes">Additional notes <span className="quote-request__optional">Optional</span></label>
-          <textarea id="additional-notes" name="additionalNotes" rows="3" placeholder="Substitutions, specifications, project details, or other notes" />
+          <label className="quote-request__full-label" htmlFor="project-notes">Project notes <span className="quote-request__optional">Optional</span></label>
+          <textarea id="project-notes" name="projectNotes" rows="3" placeholder="Substitutions, specifications, delivery details, or other project information" />
         </fieldset>
 
         {status.message && <div className={`quote-request__status quote-request__status--${status.type}`} role={status.type === 'error' ? 'alert' : 'status'}>{status.message}</div>}
