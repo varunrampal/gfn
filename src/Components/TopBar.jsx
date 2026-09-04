@@ -28,7 +28,7 @@ const TopBar = () => (
       </div>
 
       <div className="gfn-topbar__actions">
-        <a href="/files/GFN_Availability_List.xlsx" download>
+        <a href="/files/GFN_Availability_List.pdf" download>
           Availability List <i className="fa fa-download" aria-hidden="true" />
         </a>
         <a className="gfn-topbar__quote" href="/quote">

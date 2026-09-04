@@ -16,7 +16,7 @@ const BottomFeatures = () => (
       </div>
 
       <div className="gfn-prefooter__grid">
-        <a className="gfn-prefooter__item" href="/files/GFN_Availability_List.xlsx" download>
+        <a className="gfn-prefooter__item" href="/files/GFN_Availability_List.pdf" download>
           <span className="gfn-prefooter__icon" aria-hidden="true"><i className="fa fa-clipboard-list" /></span>
           <span className="gfn-prefooter__copy">
             <small>Inventory Resource</small>

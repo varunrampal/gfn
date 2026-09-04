@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/files/GFN_Availability_List.xlsx';
-    link.download = 'GFN_Availability_List.xlsx';
+    link.href = '/files/GFN_Availability_List.pdf';
+    link.download = 'GFN_Availability_List.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
