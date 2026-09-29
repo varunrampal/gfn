@@ -16,10 +16,16 @@ const contactDetails = [
     href: 'tel:+16042171351',
   },
   {
+    icon: 'fa-fax',
+    label: 'Fax',
+    value: '604-455-8168',
+    href: 'fax:+16044558168',
+  },
+  {
     icon: 'fa-envelope',
     label: 'Email',
-    value: 'info@greenflownurseries.com',
-    href: 'mailto:info@greenflownurseries.com',
+    value: 'info@gfnplants.ca',
+    href: 'mailto:info@gfnplants.ca',
   },
   {
     icon: 'fa-map-marker-alt',

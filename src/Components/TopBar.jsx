@@ -21,9 +21,9 @@ const TopBar = () => (
           <i className="fa fa-phone-alt" aria-hidden="true" />
           <span>Toll-Free: 1-833-498-9898</span>
         </a>
-        <a className="gfn-topbar__email" href="mailto:info@greenflownurseries.com">
+        <a className="gfn-topbar__email" href="mailto:info@gfnplants.ca">
           <i className="fa fa-envelope" aria-hidden="true" />
-          <span>info@greenflownurseries.com</span>
+          <span>info@gfnplants.ca</span>
         </a>
       </div>
 

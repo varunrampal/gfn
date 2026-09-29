@@ -6,7 +6,7 @@ export const SITE = {
     'Green Flow Nurseries Ltd. grows quality BC native plants in Mission, BC for wholesale, landscape, restoration, wetland, highway, park, and residential projects.',
   phone: '+1-604-217-1351',
   displayPhone: '604-217-1351',
-  email: 'info@greenflownurseries.com',
+  email: 'info@gfnplants.ca',
   image: 'https://greenflownurseries.com/images/plants/thujaplicata.jpg',
   address: {
     streetAddress: '35444 Hartley Road',
@@ -97,7 +97,7 @@ export const seoPages = {
     title: 'Contact Green Flow Nurseries | Mission, BC',
     name: 'Contact Us',
     description:
-      'Contact Green Flow Nurseries in Mission, BC at 604-217-1351 or info@greenflownurseries.com for wholesale native plant availability and quotes.',
+      'Contact Green Flow Nurseries in Mission, BC at 604-217-1351 or info@gfnplants.ca for wholesale native plant availability and quotes.',
     keywords:
       'contact Green Flow Nurseries, Mission BC nursery, native plant nursery phone, wholesale nursery contact',
     schemaType: 'ContactPage',
